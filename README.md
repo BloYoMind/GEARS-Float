@@ -4,7 +4,7 @@ This software is intended for use on the ESP32-WROOM-32 board in the GEARS, Inc.
 
 ## Setup
 
-First, ensure you have the correct serial drivers for connecting to the ESP32. If you have never connected your computer to the ESP32 over serial, install [this driver](https://www.silabs.com/developer-tools/usb-to-uart-bridge-vcp-drivers?tab=downloads) from Silicon Labs.
+First, ensure you have the correct serial drivers for connecting to the ESP32. If you have never connected your computer to the ESP32 over serial, install [this driver](https://www.silabs.com/developer-tools/usb-to-uart-bridge-vcp-drivers?tab=downloads) from Silicon Labs. Download the one labled "CP210x VCP Windows"
 
 Once you have the driver, ensure you have Python installed. You can get the latest version [here](https://www.python.org/downloads/). Make sure to check `Add Python to PATH` during installation.
 
