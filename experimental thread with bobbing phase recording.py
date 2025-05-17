@@ -128,10 +128,20 @@ class SquidControl():
     def bobbingThread(self, bobbingDuration):
         def action():
             endTime = ticks_ms() + (bobbingDuration * 1000)
+            profileData = []
             while ticks_ms() < endTime:
                 self.surface(seconds=1)
+                currentPressure = self.getPressure()
+                currentDepth = (currentPressure - 101.325) / 9.78
+                profileData.append([str(round((ticks_ms() - startTime)/1000, 2)), str(currentPressure), str(round(currentDepth, 2))])
                 self.sink(seconds=1)
+                currentPressure = self.getPressure()
+                currentDepth = (currentPressure - 101.325) / 9.78
+                profileData.append([str(round((ticks_ms() - startTime)/1000, 2)), str(currentPressure), str(round(currentDepth, 2))])
+            # Save data to global or pass back
+            print('Bobbing Data:', profileData)
         start_new_thread(action, ())
+
 
 def main():
     # Declare global variables
