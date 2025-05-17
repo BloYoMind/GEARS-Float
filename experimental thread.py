@@ -143,9 +143,10 @@ def main():
     # Constants for easily changing the timing of the float
     sinkSec = 6
     surfaceSec = 6
+    sinkSec2 =6 
     waitSurfaceSec = 45
     bobbingDuration = 45 # Duration to bob up and down
-    numProfiles = 3
+    numProfiles = 2
     
     # Create an instance of the SquidControl class
     squid = SquidControl()
@@ -200,11 +201,11 @@ def main():
             squid.bobbingThread(bobbingDuration)
         
         # Continue sinking until the bottom
-        squid.sinkThread(seconds=sinkSec)
+        squid.sinkThread(seconds=sinkSec2)
         profileData += squid.record('down')
         
         # Float the float
-        squid.surfaceThread(seconds=surfaceSec)
+        squid.surfaceThread(seconds=(surfaceSec+sinkSec2))
         
         # Record until it hits the surface
         profileData += squid.record('up')
