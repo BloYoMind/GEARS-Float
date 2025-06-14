@@ -104,7 +104,7 @@ class SquidControl():
     # Get the current pressure reading from the pressure sensor
     def getPressure(self):
         if debugMode == False:
-            return round(_map(self.pressure.raw_to_v(self.pressure.read()), 0.5, 4.5, 0, 30) * 6.89476 + 101.325 + 4.56, 2)
+            return round(_map(self.pressure.raw_to_v(self.pressure.read()), 0.5, 4.5, 0, 30) * 6.89476 + 101.325 + 2.91, 2)
         else:
             return round(uniform(100.000, 130.000), 2)
     
@@ -153,7 +153,7 @@ def main():
     # Constants for easily changing the timing of the float
     sinkSec = 6
     surfaceSec = 6
-    waitSurfaceSec = 45
+    waitSurfaceSec = 60
     bobbingDuration = 45 # Duration to bob up and down
     numProfiles = 3
     
