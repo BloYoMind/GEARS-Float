@@ -134,7 +134,7 @@ def main():
     # Constants  for easily changing the timing of the float
     sinkSec = 6
     surfaceSec = 6
-    waitSurfaceSec = 45
+    waitSurfaceSec = 60
     numProfiles = 3
     
     # Create an instance of the SquidControl class
