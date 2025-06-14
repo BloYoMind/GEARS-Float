@@ -141,7 +141,7 @@ def main():
     # Constants for easily changing the timing of the float
     sinkSec = 6
     surfaceSec = 6
-    waitSurfaceSec = 45
+    waitSurfaceSec = 60
     bobbingDuration = 45 # Duration to bob up and down
     numProfiles = 3
     
