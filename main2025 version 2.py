@@ -1,6 +1,6 @@
 import socket
-from utime import sleep, ticks_ms
-from machine import Pin, SoftI2C
+from utime import sleep, ticks_ms # type: ignore
+from machine import Pin, SoftI2C # type: ignore
 from _thread import start_new_thread
 from ads1x15 import ADS1115
 
