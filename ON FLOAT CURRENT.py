@@ -103,7 +103,7 @@ class SquidControl():
     # Get the current pressure reading from the pressure sensor
     def getPressure(self):
         if debugMode == False:
-            return round(_map(self.pressure.raw_to_v(self.pressure.read()), 0.5, 4.5, 0, 30) + 101.35 , 2)
+            return round(_map(self.pressure.raw_to_v(self.pressure.read()), 0.5, 4.5, 0, 206.8427) + 101.325 , 2)
         else:
             return round(uniform(100.000, 130.000), 2)
         
@@ -117,7 +117,7 @@ class SquidControl():
             dataPoint.append(str(round((ticks_ms() - startTime)/1000, 2)))
             currentPressure = self.getPressure()
             dataPoint.append(str(currentPressure))
-            dataPoint.append(str(round((currentPressure - 101.325) / 9.78, 2))) # Depth calculation
+            dataPoint.append(str(round((currentPressure - 101.325) / 9.81, 2))) # Depth calculation
             print('Data packet:', dataPoint)
             profileData.append(dataPoint)
             sleep(5)
