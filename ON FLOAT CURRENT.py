@@ -164,12 +164,11 @@ def main():
     
     #pull in the syringe to take it to a known starting point, then extend the syringe to push out air
     print("pushing out air")
-    squid.sink(seconds=sinkSec)
     sleep(0.5)
-    squid.surface(seconds=surfaceSec)
+    squid.surface(seconds=24)
     
     # Give the operator time to establish a connection
-    sleep(waitSurfaceSec)
+    sleep(90)
     
     profiles = []
     for i in range(numProfiles):
@@ -182,6 +181,7 @@ def main():
         
         # Record until it hits bottom
         profileData = squid.record('down')
+        
         
         print("floating")
        
